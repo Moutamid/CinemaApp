@@ -68,10 +68,9 @@ public class HomeFragment extends Fragment {
     }
 
     private void getKidsMovies() {
-        String query = "SELECT * FROM Movie where category = Kids";
-        Statement statement = null;
         try {
-            statement = connection.createStatement();
+            String query = "SELECT * FROM Movie where category = 'Kids'";
+            Statement statement = connection.createStatement();
             ResultSet set = statement.executeQuery(query);
             while (set.next()){
                 kids.add(set.getString(5));
@@ -79,6 +78,7 @@ public class HomeFragment extends Fragment {
             kidsadapter = new MovieTimingAdapter(view.getContext(), kids);
             binding.kidsRC.setAdapter(kidsadapter);
         } catch (SQLException e) {
+            Log.d("getKidsMovies", e.getMessage());
             e.printStackTrace();
         }
     }
