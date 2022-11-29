@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary"
+    tools:context=".AdminPinActivity">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25sp"
+        android:layout_marginTop="25sp"
+        android:layout_marginEnd="25sp"
+        android:layout_marginBottom="25sp"
+        android:fontFamily="@font/montserrat"
+        android:gravity="center"
+        android:letterSpacing="0.5"
+        android:lineHeight="35dp"
+        android:padding="5dp"
+        android:text="Admin\nLogin"
+        android:textAllCaps="true"
+        android:textColor="@color/accent"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/backbtn"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="25sp"
+        android:layout_marginTop="32sp"
+        android:src="@drawable/ic_arrow_back"
+        app:tint="@color/accent" />
+
+    <in.aabhasjindal.otptextview.OtpTextView
+        android:id="@+id/otp_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textColor="#ffffff"
+        app:bar_active_color="@color/accent"
+        app:bar_enabled="true"
+        app:bar_height="2dp"
+        app:bar_inactive_color="@color/offwhite"
+        app:height="40dp"
+        app:hide_otp="true"
+        app:length="4"
+        app:bar_error_color="@color/red"
+        app:otp_text_size="24dp"
+        app:width="40dp" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/loginBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="25sp"
+        android:visibility="gone"
+        app:cardBackgroundColor="@color/accent"
+        android:layout_alignParentBottom="true"
+        app:cardCornerRadius="4dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Login"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:padding="12dp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/poppins" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+
+</RelativeLayout>

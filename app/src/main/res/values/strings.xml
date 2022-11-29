@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Cinema App</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >6 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="welcome_to_cinema_app">Welcome to <font color="#DC6939">Cinema App</font> \nBook/Buy your movies ticket and many more </string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="admin">Are You <font color="#DC6939">Admin?</font></string>
+    <string name="perks_1"><font color="#DC6939"><b>•</b></font> \t\t Access Of Rewards</string>
+    <string name="perks_2"><font color="#DC6939"><b>•</b></font> \t\t Credit Refunds on bookings</string>
+    <string name="perks_3"><font color="#DC6939">•</font> \t\t Ticket, Food and Drinks offers</string>
+    <string name="perks_4"><font color="#DC6939">•</font> \t\t Secure saved payment and details for quicker booking</string>
+</resources>

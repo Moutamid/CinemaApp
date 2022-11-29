@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary"
+    android:orientation="vertical"
+    tools:context=".SignUpActivity">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25sp"
+        android:layout_marginTop="25sp"
+        android:layout_marginEnd="25sp"
+        android:layout_marginBottom="25sp"
+        android:fontFamily="@font/montserrat"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="SignUp"
+        android:textAllCaps="true"
+        android:textColor="@color/accent"
+        android:letterSpacing="0.5"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/backbtn"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="25sp"
+        android:layout_marginTop="32sp"
+        android:src="@drawable/ic_arrow_back"
+        app:tint="@color/accent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/signup"
+        android:layout_below="@id/title"
+        android:scrollbarSize="0dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25sp"
+                android:layout_marginEnd="25sp"
+                android:background="@drawable/edit_bg"
+                android:fontFamily="@font/poppins"
+                android:hint="Username"
+                android:inputType="textEmailAddress"
+                android:padding="12dp"
+                android:textColor="@color/dark"
+                android:textColorHint="@color/dark" />
+
+            <EditText
+                android:id="@+id/number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25sp"
+                android:layout_marginTop="25sp"
+                android:layout_marginEnd="25sp"
+                android:background="@drawable/edit_bg"
+                android:fontFamily="@font/poppins"
+                android:hint="Phone Number"
+                android:inputType="number"
+                android:padding="12dp"
+                android:textColor="@color/dark"
+                android:textColorHint="@color/dark" />
+
+            <EditText
+                android:id="@+id/ticket_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25sp"
+                android:layout_marginTop="25sp"
+                android:layout_marginEnd="25sp"
+                android:background="@drawable/edit_bg"
+                android:fontFamily="@font/poppins"
+                android:hint="Ticket Number"
+                android:inputType="number"
+                android:padding="12dp"
+                android:textColor="@color/dark"
+                android:textColorHint="@color/dark" />
+
+            <EditText
+                android:id="@+id/seat_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25sp"
+                android:layout_marginTop="25sp"
+                android:layout_marginEnd="25sp"
+                android:background="@drawable/edit_bg"
+                android:fontFamily="@font/poppins"
+                android:hint="Seat Number"
+                android:inputType="number"
+                android:padding="12dp"
+                android:textColor="@color/dark"
+                android:textColorHint="@color/dark" />
+
+            <EditText
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25sp"
+                android:layout_marginTop="25sp"
+                android:layout_marginEnd="25sp"
+                android:background="@drawable/edit_bg"
+                android:fontFamily="@font/poppins"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:padding="12dp"
+                android:textColor="@color/dark"
+                android:textColorHint="@color/dark" />
+
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25sp"
+                android:layout_marginTop="25sp"
+                android:layout_marginEnd="25sp"
+                android:background="@drawable/edit_bg"
+                android:fontFamily="@font/poppins"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:padding="12dp"
+                android:textColor="@color/dark"
+                android:textColorHint="@color/dark" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/title"
+                android:layout_marginStart="25sp"
+                android:layout_marginEnd="25sp"
+                android:fontFamily="@font/montserrat"
+                android:lineSpacingExtra="5dp"
+                android:padding="5dp"
+                android:text="@string/invalid_password"
+                android:textColor="@color/accent"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/cnfrm_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="25sp"
+                android:background="@drawable/edit_bg"
+                android:fontFamily="@font/poppins"
+                android:hint="Confirm Password"
+                android:inputType="textPassword"
+                android:padding="12dp"
+                android:textColor="@color/dark"
+                android:textColorHint="@color/dark" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/signup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25sp"
+        android:layout_marginTop="25sp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="25sp"
+        android:layout_marginBottom="25sp"
+        app:cardBackgroundColor="@color/accent"
+        app:cardCornerRadius="4dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Register Your Account"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:padding="12dp"
+            android:fontFamily="@font/poppins" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+</RelativeLayout>

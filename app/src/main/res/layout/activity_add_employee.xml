@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary"
+    tools:context=".AddEmployeeActivity">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25sp"
+        android:layout_marginTop="25sp"
+        android:layout_marginEnd="25sp"
+        android:layout_marginBottom="25sp"
+        android:fontFamily="@font/montserrat"
+        android:gravity="center"
+        android:letterSpacing="0.5"
+        android:padding="5dp"
+        android:text="Add Employee"
+        android:textAllCaps="true"
+        android:textColor="@color/accent"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/backbtn"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="25sp"
+        android:layout_marginTop="30sp"
+        android:src="@drawable/ic_arrow_back"
+        app:tint="@color/accent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/title"
+        android:scrollbarSize="0dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/firstName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25sp"
+                android:layout_marginEnd="25sp"
+                android:background="@drawable/edit_bg"
+                android:fontFamily="@font/poppins"
+                android:hint="First Name"
+                android:inputType="textPersonName"
+                android:padding="12dp"
+                android:textColor="@color/dark"
+                android:textColorHint="@color/dark" />
+
+            <EditText
+                android:id="@+id/lastname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25sp"
+                android:layout_marginEnd="25sp"
+                android:layout_marginTop="25sp"
+                android:background="@drawable/edit_bg"
+                android:fontFamily="@font/poppins"
+                android:hint="Last Name"
+                android:inputType="textPersonName"
+                android:padding="12dp"
+                android:textColor="@color/dark"
+                android:textColorHint="@color/dark" />
+
+            <RadioGroup
+                android:id="@+id/radioGrp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="25dp">
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/male"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:textColor="@color/white"
+                    app:buttonTint="@color/accent"
+                    android:fontFamily="@font/poppins"
+                    android:text="\tMale" />
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/female"
+                    android:layout_width="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    app:buttonTint="@color/accent"
+                    android:textColor="@color/white"
+                    android:layout_marginLeft="12dp"
+                    android:text="\tFemale" />
+
+            </RadioGroup>
+
+            <EditText
+                android:id="@+id/essn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25sp"
+                android:layout_marginEnd="25sp"
+                android:background="@drawable/edit_bg"
+                android:fontFamily="@font/poppins"
+                android:hint="ESSN"
+                android:inputType="number"
+                android:padding="12dp"
+                android:textColor="@color/dark"
+                android:textColorHint="@color/dark" />
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25sp"
+                android:layout_marginEnd="25sp"
+                android:layout_marginTop="25sp"
+                android:background="@drawable/edit_bg"
+                android:fontFamily="@font/poppins"
+                android:text="Date"
+                android:textSize="16dp"
+                android:gravity="center_vertical"
+                android:padding="12dp"
+                android:textColor="@color/dark" />
+
+            <EditText
+                android:id="@+id/salary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25sp"
+                android:layout_marginEnd="25sp"
+                android:layout_marginTop="25sp"
+                android:background="@drawable/edit_bg"
+                android:fontFamily="@font/poppins"
+                android:hint="Salary"
+                android:inputType="number"
+                android:padding="12dp"
+                android:textColor="@color/dark"
+                android:textColorHint="@color/dark" />
+
+            <EditText
+                android:id="@+id/Address"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginStart="25sp"
+                android:layout_marginEnd="25sp"
+                android:layout_marginTop="25sp"
+                android:gravity="top"
+                android:background="@drawable/edit_bg"
+                android:fontFamily="@font/poppins"
+                android:hint="Address"
+                android:inputType="textMultiLine"
+                android:padding="12dp"
+                android:textColor="@color/dark"
+                android:textColorHint="@color/dark" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/add_employee"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25sp"
+                android:layout_marginTop="25sp"
+                android:layout_marginEnd="25sp"
+                android:layout_marginBottom="25sp"
+                app:cardBackgroundColor="@color/accent"
+                app:cardCornerRadius="4dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Add New Employee"
+                    android:gravity="center"
+                    android:textSize="18sp"
+                    android:textColor="@color/white"
+                    android:padding="12dp"
+                    android:fontFamily="@font/poppins" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
