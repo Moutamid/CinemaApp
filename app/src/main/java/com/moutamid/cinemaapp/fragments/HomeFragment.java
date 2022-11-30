@@ -1,5 +1,6 @@
 package com.moutamid.cinemaapp.fragments;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -17,6 +18,7 @@ import com.moutamid.cinemaapp.MainActivity;
 import com.moutamid.cinemaapp.R;
 import com.moutamid.cinemaapp.adapters.MovieTimingAdapter;
 import com.moutamid.cinemaapp.databinding.FragmentHomeBinding;
+import com.moutamid.cinemaapp.model.MovieModel;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -26,11 +28,12 @@ import java.util.ArrayList;
 
 public class HomeFragment extends Fragment {
     FragmentHomeBinding binding;
-    ArrayList<String> kids, actions, scifi;
+    ArrayList<MovieModel> kids, actions, scifi;
     Connection connection;
     ConSQL con;
-    MovieTimingAdapter kidsadapter, action, sci;
+    MovieTimingAdapter kidsadapter, actionadapter, sciadapter;
     View view;
+    Context context;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -40,6 +43,7 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         view = binding.getRoot();
+        context = view.getContext();
 
         kids = new ArrayList<>();
         actions = new ArrayList<>();
@@ -52,19 +56,71 @@ public class HomeFragment extends Fragment {
             e.printStackTrace();
         }
 
-        binding.kidsRC.setLayoutManager(new LinearLayoutManager(view.getContext(), LinearLayoutManager.HORIZONTAL, false));
-        binding.actionRC.setLayoutManager(new LinearLayoutManager(view.getContext(), LinearLayoutManager.HORIZONTAL, false));
-        binding.scifiRC.setLayoutManager(new LinearLayoutManager(view.getContext(), LinearLayoutManager.HORIZONTAL, false));
+        binding.kidsRC.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false));
+        binding.actionRC.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false));
+        binding.scifiRC.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false));
 
         binding.kidsRC.setHasFixedSize(false);
         binding.actionRC.setHasFixedSize(false);
         binding.scifiRC.setHasFixedSize(false);
 
-        if (connection!=null){
+        if (connection != null){
             getKidsMovies();
+            getActionMovies();
+            getSciMovies();
+        } else {
+            Toast.makeText(context, "error", Toast.LENGTH_SHORT).show();
         }
 
         return view;
+    }
+
+    private void getSciMovies() {
+        try {
+            String query = "SELECT * FROM Movie where category = 'Science Fiction'";
+            Statement statement = connection.createStatement();
+            ResultSet set = statement.executeQuery(query);
+            while (set.next()){
+                scifi.add(new MovieModel(
+                        set.getString(1),
+                        set.getString(4),
+                        set.getString(6),
+                        set.getString(7),
+                        set.getString(8),
+                        set.getInt(2),
+                        set.getDate(3),
+                        set.getTime(5)));
+            }
+            sciadapter = new MovieTimingAdapter(context, scifi);
+            binding.scifiRC.setAdapter(sciadapter);
+        } catch (SQLException e) {
+            Log.d("getKidsMovies", e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
+    private void getActionMovies() {
+        try {
+            String query = "SELECT * FROM Movie where category = 'Action'";
+            Statement statement = connection.createStatement();
+            ResultSet set = statement.executeQuery(query);
+            while (set.next()){
+                actions.add(new MovieModel(
+                        set.getString(1),
+                        set.getString(4),
+                        set.getString(6),
+                        set.getString(7),
+                        set.getString(8),
+                        set.getInt(2),
+                        set.getDate(3),
+                        set.getTime(5)));
+            }
+            actionadapter = new MovieTimingAdapter(context, actions);
+            binding.actionRC.setAdapter(actionadapter);
+        } catch (SQLException e) {
+            Log.d("getKidsMovies", e.getMessage());
+            e.printStackTrace();
+        }
     }
 
     private void getKidsMovies() {
@@ -73,9 +129,17 @@ public class HomeFragment extends Fragment {
             Statement statement = connection.createStatement();
             ResultSet set = statement.executeQuery(query);
             while (set.next()){
-                kids.add(set.getString(5));
+                kids.add(new MovieModel(
+                        set.getString(1),
+                        set.getString(4),
+                        set.getString(6),
+                        set.getString(7),
+                        set.getString(8),
+                        set.getInt(2),
+                        set.getDate(3),
+                        set.getTime(5)));
             }
-            kidsadapter = new MovieTimingAdapter(view.getContext(), kids);
+            kidsadapter = new MovieTimingAdapter(context, kids);
             binding.kidsRC.setAdapter(kidsadapter);
         } catch (SQLException e) {
             Log.d("getKidsMovies", e.getMessage());

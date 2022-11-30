@@ -11,14 +11,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.card.MaterialCardView;
 import com.moutamid.cinemaapp.R;
+import com.moutamid.cinemaapp.model.MovieModel;
 
 import java.util.ArrayList;
 
 public class MovieTimingAdapter extends RecyclerView.Adapter<MovieTimingAdapter.MovieTimeVH> {
     Context context;
-    ArrayList<String> list;
+    ArrayList<MovieModel> list;
 
-    public MovieTimingAdapter(Context context, ArrayList<String> list) {
+    public MovieTimingAdapter(Context context, ArrayList<MovieModel> list) {
         this.context = context;
         this.list = list;
     }
@@ -27,12 +28,12 @@ public class MovieTimingAdapter extends RecyclerView.Adapter<MovieTimingAdapter.
     @Override
     public MovieTimeVH onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.movie_timing_card, parent, false);
-        return new MovieTimeVH(view);
+        return new MovieTimingAdapter.MovieTimeVH(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull MovieTimeVH holder, int position) {
-        holder.time.setText(list.get(holder.getAdapterPosition()));
+        holder.time.setText(list.get(holder.getAdapterPosition()).getShow_times().toString().substring(0,5));
     }
 
     @Override

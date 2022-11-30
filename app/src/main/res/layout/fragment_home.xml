@@ -30,7 +30,7 @@
                 android:id="@+id/kidsRC"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:itemCount="5"
+                android:padding="15dp"
                 tools:listitem="@layout/movie_timing_card" />
 
             <TextView
@@ -46,7 +46,7 @@
                 android:id="@+id/actionRC"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:itemCount="5"
+                android:padding="15dp"
                 tools:listitem="@layout/movie_timing_card" />
 
             <TextView
@@ -62,6 +62,7 @@
                 android:id="@+id/scifiRC"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:padding="15dp"
                 tools:listitem="@layout/movie_timing_card" />
 
         </LinearLayout>

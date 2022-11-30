@@ -30,12 +30,12 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        try {
+        /*try {
             con = new ConSQL();
             connection = con.conclass();
         } catch (Exception e){
             e.printStackTrace();
-        }
+        }*/
 
         binding.bottomNav.setOnNavigationItemSelectedListener(this);
         binding.bottomNav.setSelectedItemId(R.id.home_nav);
