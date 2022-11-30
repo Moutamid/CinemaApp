@@ -136,12 +136,16 @@ public class AddEmployeeActivity extends AppCompatActivity {
 
         @Override
         protected String doInBackground(String... params) {
+
             try {
                 String queryStmt = "insert into employee (FirstName, LastName, ESSN, BirthDate, Address, sex, Salary) values('" + FirstName + "','" + LastName + "','" + ESSN + "','" + BirthDate + "','" + Address + "','" + sex + "','" + Salary + "')";
                 PreparedStatement preparedStatement = connection.prepareStatement(queryStmt);
                 preparedStatement.executeQuery();
                 preparedStatement.close();
                 return result;
+            } catch (SQLException e) {
+                e.printStackTrace();
+                return e.getMessage();
             } catch (Exception e) {
                 return "Exception. Please check your code and database.";
             }
