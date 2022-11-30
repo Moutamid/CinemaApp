@@ -134,6 +134,20 @@
                 android:gravity="center_vertical"
                 android:padding="12dp"
                 android:textColor="@color/dark" />
+            <TextView
+                android:id="@+id/errorDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25sp"
+                android:layout_marginEnd="25sp"
+                android:fontFamily="@font/montserrat"
+                android:lineSpacingExtra="5dp"
+                android:padding="5dp"
+                android:visibility="gone"
+                android:text="Please Select The Date"
+                android:textColor="@color/accent"
+                android:textSize="14sp"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/salary"

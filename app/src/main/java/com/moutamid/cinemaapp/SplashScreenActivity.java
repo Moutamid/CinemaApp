@@ -63,10 +63,10 @@ public class SplashScreenActivity extends AppCompatActivity implements Connectio
                     }, 3000);
                 } else {
                     Snackbar.make(SplashScreenActivity.this, binding.rlLayout, "Couldn't connect to the server", Snackbar.LENGTH_INDEFINITE)
-                            .setAction("Close", new View.OnClickListener() {
+                            .setAction("Retry!", new View.OnClickListener() {
                                 @Override
                                 public void onClick(View v) {
-                                    finish();
+                                    recreate();
                                 }
                             })
                             .setActionTextColor(getResources().getColor(R.color.accent))
@@ -78,10 +78,10 @@ public class SplashScreenActivity extends AppCompatActivity implements Connectio
         } else {
             binding.connection.setText("No Internet Access");
             Snackbar.make(SplashScreenActivity.this, binding.rlLayout, "No Internet Access", Snackbar.LENGTH_INDEFINITE)
-                    .setAction("Close", new View.OnClickListener() {
+                    .setAction("Retry!", new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            finish();
+                            recreate();
                         }
                     })
                     .setActionTextColor(getResources().getColor(R.color.accent))

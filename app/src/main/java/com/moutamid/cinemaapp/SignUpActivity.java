@@ -2,11 +2,14 @@ package com.moutamid.cinemaapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Patterns;
+import android.view.View;
 import android.widget.Toast;
 
+import com.google.android.material.snackbar.Snackbar;
 import com.moutamid.cinemaapp.Utils.ConSQL;
 import com.moutamid.cinemaapp.databinding.ActivitySignUpBinding;
 
@@ -14,12 +17,16 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Random;
 
 public class SignUpActivity extends AppCompatActivity {
     ActivitySignUpBinding binding;
     Connection connection;
     ConSQL con;
     String email, password, username, phoneNumber;
+    String result = "User Created Successfully!";
+    int dummyTicket;
+    int seat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +40,9 @@ public class SignUpActivity extends AppCompatActivity {
         } catch (Exception e){
             e.printStackTrace();
         }
+
+        Random rnd = new Random();
+        dummyTicket = rnd.nextInt(999999);
 
         binding.backbtn.setOnClickListener(v -> {
             onBackPressed();
@@ -49,23 +59,36 @@ public class SignUpActivity extends AppCompatActivity {
 
                 try {
                     if (connection != null) {
-                        String query = "insert into userN values('" + username + "','" + email + "','" + phoneNumber + "','" + password + "','" + null + "','" + null + "')";
+                        /*String query = "insert into userN values('" + username + "','" + email + "','" + phoneNumber + "','" + password + "','" + null + "','" + null + "')";
                         PreparedStatement statement = connection.prepareStatement(query);
                         ResultSet set = statement.executeQuery();
-                        Toast.makeText(this, "User Created", Toast.LENGTH_SHORT).show();
-                        /*AddUsers addUsers = new AddUsers();
-                        addUsers.execute("");*/
+                        Snackbar.make(SignUpActivity.this, binding.rlLayout, "User Created Successfully!", Snackbar.LENGTH_INDEFINITE)
+                                .setAction("Login Now", new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+                                        startActivity(new Intent(SignUpActivity.this, LoginActivity.class));
+                                        finish();
+                                    }
+                                })
+                                .setActionTextColor(getResources().getColor(R.color.accent))
+                                .show();*/
+                        AddUsers addUsers = new AddUsers();
+                        addUsers.execute("");
                     } else {
-                        Toast.makeText(this, "Couldn't connect to the server", Toast.LENGTH_SHORT).show();
+                        Snackbar.make(SignUpActivity.this, binding.rlLayout, "Couldn't connect to the server", Snackbar.LENGTH_INDEFINITE)
+                                .setAction("Close", new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+                                    }
+                                })
+                                .setActionTextColor(getResources().getColor(R.color.accent))
+                                .show();
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
         });
-
-
-
     }
 
     private boolean validation() {
@@ -108,16 +131,15 @@ public class SignUpActivity extends AppCompatActivity {
         protected String doInBackground(String... params) {
 
             try {
-                String queryStmt = "insert into userN (UserName, Email, PhoneNumber, userPassword, TicketNumber, seatNumber) values('" + username + "','" + email + "','" + phoneNumber + "','" + password + "','" + 0 + "','" + 0 + "')";
+                String queryStmt = "insert into userN (UserName, Email, PhoneNumber, userPassword, TicketNumber, seatNumber) values('" + username + "','" + email + "','" + phoneNumber + "','" + password + "','" + dummyTicket + "','" + seat + "')";
 
                 PreparedStatement preparedStatement = connection.prepareStatement(queryStmt);
-                preparedStatement.executeUpdate();
-                preparedStatement.close();
-
-                return "Added successfully";
+                preparedStatement.executeQuery();
+                // preparedStatement.close();
+                return result;
             } catch (SQLException e) {
                 e.printStackTrace();
-                return e.getMessage().toString();
+                return e.getMessage();
             } catch (Exception e) {
                 return "Exception. Please check your code and database.";
             }
@@ -125,11 +147,19 @@ public class SignUpActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(String result) {
-
-            //Toast.makeText(signup.this, result, Toast.LENGTH_SHORT).show();
-
-            if (result.equals("Added successfully")) {
+            if (result.equals(SignUpActivity.this.result)) {
                 // Clear();
+                Snackbar.make(SignUpActivity.this, binding.rlLayout, result, Snackbar.LENGTH_INDEFINITE)
+                        .setAction("Login Now", new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                startActivity(new Intent(SignUpActivity.this, LoginActivity.class));
+                                finish();
+                            }
+                        })
+                        .setActionTextColor(getResources().getColor(R.color.accent))
+                        .show();
+            } else {
                 Toast.makeText(SignUpActivity.this, result, Toast.LENGTH_SHORT).show();
             }
 
