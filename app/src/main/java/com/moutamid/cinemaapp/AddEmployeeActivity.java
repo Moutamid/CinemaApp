@@ -165,7 +165,6 @@ public class AddEmployeeActivity extends AppCompatActivity {
         }
     }
 
-
     private void updateLabel() {
         String myFormat = "yyyy-MM-dd";
         SimpleDateFormat dateFormat = new SimpleDateFormat(myFormat, Locale.getDefault());

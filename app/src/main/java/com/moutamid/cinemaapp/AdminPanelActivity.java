@@ -33,7 +33,7 @@ public class AdminPanelActivity extends AppCompatActivity {
         });
 
         binding.movie.setOnClickListener(v -> {
-            startActivity(new Intent(this, AddBranchActivity.class));
+            startActivity(new Intent(this, AddMovieActivity.class));
         });
 
         binding.ticket.setOnClickListener(v -> {

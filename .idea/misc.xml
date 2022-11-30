@@ -10,6 +10,7 @@
         <entry key="..\:/BridgeLinxProject/CinemaApp/app/src/main/res/layout/activity_add_branch.xml" value="0.209375" />
         <entry key="..\:/BridgeLinxProject/CinemaApp/app/src/main/res/layout/activity_add_employee.xml" value="0.209375" />
         <entry key="..\:/BridgeLinxProject/CinemaApp/app/src/main/res/layout/activity_add_hall.xml" value="0.209375" />
+        <entry key="..\:/BridgeLinxProject/CinemaApp/app/src/main/res/layout/activity_add_movie.xml" value="0.22" />
         <entry key="..\:/BridgeLinxProject/CinemaApp/app/src/main/res/layout/activity_admin_panel.xml" value="0.18" />
         <entry key="..\:/BridgeLinxProject/CinemaApp/app/src/main/res/layout/activity_admin_pin.xml" value="0.2" />
         <entry key="..\:/BridgeLinxProject/CinemaApp/app/src/main/res/layout/activity_login.xml" value="0.22" />
@@ -20,6 +21,7 @@
         <entry key="..\:/BridgeLinxProject/CinemaApp/app/src/main/res/layout/fragment_home.xml" value="0.25" />
         <entry key="..\:/BridgeLinxProject/CinemaApp/app/src/main/res/layout/fragment_movies.xml" value="0.1953125" />
         <entry key="..\:/BridgeLinxProject/CinemaApp/app/src/main/res/layout/movie_timing_card.xml" value="0.33" />
+        <entry key="..\:/BridgeLinxProject/CinemaApp/app/src/main/res/layout/show_year_dialog.xml" value="0.209375" />
         <entry key="..\:/BridgeLinxProject/CinemaApp/app/src/main/res/menu/bottom_navigation.xml" value="0.209375" />
       </map>
     </option>
