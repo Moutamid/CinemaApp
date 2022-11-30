@@ -28,6 +28,7 @@ public class AddTicketActivity extends AppCompatActivity {
     ConSQL con;
     List<String> movieNames;
     ArrayAdapter<String> movieAdapter;
+    ArrayAdapter<String> hallAdapter;
     List<String> hallNums;
     int Ticket_Number, seat_number;
     int hallNumber;
@@ -67,6 +68,20 @@ public class AddTicketActivity extends AppCompatActivity {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
+
+            try {
+                String query = "SELECT * FROM Hall";
+                Statement statement = connection.createStatement();
+                ResultSet set = statement.executeQuery(query);
+                while (set.next()){
+                    hallNums.add(set.getString(1));
+                }
+                hallAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, hallNums);
+                binding.hallNumber.setAdapter(hallAdapter);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
         } else {
             Snackbar.make(AddTicketActivity.this, binding.rlLayout, "Couldn't connect to the server", Snackbar.LENGTH_INDEFINITE)
                     .setAction("Close", new View.OnClickListener() {
@@ -115,7 +130,7 @@ public class AddTicketActivity extends AppCompatActivity {
         protected String doInBackground(String... params) {
 
             try {
-                String queryStmt = "insert into employee (Ticket_Number, movie_NAme, HallNumber, seat_number) values('" + Ticket_Number + "','" + movie_NAme + "','" + hallNumber + "','" + seat_number + "')";
+                String queryStmt = "insert into Ticket (Ticket_Number, movie_NAme, HallNumber, seat_number) values('" + Ticket_Number + "','" + movie_NAme + "','" + hallNumber + "','" + seat_number + "')";
                 PreparedStatement preparedStatement = connection.prepareStatement(queryStmt);
                 preparedStatement.executeQuery();
                 preparedStatement.close();
