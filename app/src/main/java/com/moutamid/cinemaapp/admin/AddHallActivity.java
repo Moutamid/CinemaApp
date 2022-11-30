@@ -1,4 +1,4 @@
-package com.moutamid.cinemaapp;
+package com.moutamid.cinemaapp.admin;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.google.android.material.snackbar.Snackbar;
+import com.moutamid.cinemaapp.R;
 import com.moutamid.cinemaapp.Utils.ConSQL;
 import com.moutamid.cinemaapp.databinding.ActivityAddHallBinding;
 

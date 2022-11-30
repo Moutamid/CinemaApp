@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/primary"
     android:id="@+id/rl_layout"
-    tools:context=".AddMovieActivity">
+    tools:context=".admin.AddMovieActivity">
 
     <TextView
         android:id="@+id/title"
@@ -194,7 +194,7 @@
                 android:layout_marginTop="25sp"
                 android:background="@drawable/edit_bg"
                 android:fontFamily="@font/poppins"
-                android:text="time"
+                android:text="Time"
                 android:textSize="16dp"
                 android:gravity="center_vertical"
                 android:padding="12dp"
@@ -326,7 +326,7 @@
 
 
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/add_hall"
+                android:id="@+id/add_movie"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="25sp"

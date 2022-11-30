@@ -1,10 +1,12 @@
-package com.moutamid.cinemaapp;
+package com.moutamid.cinemaapp.admin;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
+
+import com.moutamid.cinemaapp.R;
 
 import in.aabhasjindal.otptextview.OTPListener;
 import in.aabhasjindal.otptextview.OtpTextView;

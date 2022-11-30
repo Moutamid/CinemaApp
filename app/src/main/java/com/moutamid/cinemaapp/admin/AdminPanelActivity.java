@@ -1,4 +1,4 @@
-package com.moutamid.cinemaapp;
+package com.moutamid.cinemaapp.admin;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -37,7 +37,7 @@ public class AdminPanelActivity extends AppCompatActivity {
         });
 
         binding.ticket.setOnClickListener(v -> {
-            startActivity(new Intent(this, AddBranchActivity.class));
+            startActivity(new Intent(this, AddTicketActivity.class));
         });
 
     }

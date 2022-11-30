@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/primary"
     android:id="@+id/rl_layout"
-    tools:context=".admin.AddHallActivity">
+    android:background="@color/primary"
+    tools:context=".admin.AddTicketActivity">
 
     <TextView
         android:id="@+id/title"
@@ -20,7 +20,7 @@
         android:gravity="center"
         android:letterSpacing="0.5"
         android:padding="5dp"
-        android:text="Add Hall"
+        android:text="Add Ticket"
         android:textAllCaps="true"
         android:textColor="@color/accent"
         android:textSize="18sp"
@@ -47,21 +47,21 @@
             android:orientation="vertical">
 
             <EditText
-                android:id="@+id/hallnum"
+                android:id="@+id/Ticket_Number"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="25sp"
                 android:layout_marginEnd="25sp"
                 android:background="@drawable/edit_bg"
                 android:fontFamily="@font/poppins"
-                android:hint="Hall Num"
+                android:hint="Ticket Number"
                 android:inputType="number"
                 android:padding="12dp"
                 android:textColor="@color/dark"
                 android:textColorHint="@color/dark" />
 
-            <EditText
-                android:id="@+id/numberofSeat"
+            <AutoCompleteTextView
+                android:id="@+id/movieName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="25sp"
@@ -69,14 +69,42 @@
                 android:layout_marginTop="25sp"
                 android:background="@drawable/edit_bg"
                 android:fontFamily="@font/poppins"
-                android:hint="Number Of Seats"
+                android:hint="Movie Name"
+                android:padding="12dp"
+                android:textColor="@color/dark"
+                android:textColorHint="@color/dark" />
+
+            <AutoCompleteTextView
+                android:id="@+id/hall_Number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25sp"
+                android:layout_marginEnd="25sp"
+                android:layout_marginTop="25sp"
+                android:background="@drawable/edit_bg"
+                android:fontFamily="@font/poppins"
+                android:hint="Hall Number"
+                android:padding="12dp"
+                android:textColor="@color/dark"
+                android:textColorHint="@color/dark" />
+
+            <EditText
+                android:id="@+id/seat_Number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25sp"
+                android:layout_marginEnd="25sp"
+                android:layout_marginTop="25sp"
+                android:background="@drawable/edit_bg"
+                android:fontFamily="@font/poppins"
+                android:hint="Seat Number"
                 android:inputType="number"
                 android:padding="12dp"
                 android:textColor="@color/dark"
                 android:textColorHint="@color/dark" />
 
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/add_hall"
+                android:id="@+id/add_ticket"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="25sp"
@@ -89,7 +117,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="Add Hall"
+                    android:text="Add Ticket"
                     android:gravity="center"
                     android:textSize="18sp"
                     android:textColor="@color/white"
@@ -101,5 +129,6 @@
         </LinearLayout>
 
     </ScrollView>
+
 
 </RelativeLayout>

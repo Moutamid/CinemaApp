@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/primary"
     android:id="@+id/rl_layout"
-    tools:context=".AddEmployeeActivity">
+    tools:context=".admin.AddEmployeeActivity">
 
     <TextView
         android:id="@+id/title"

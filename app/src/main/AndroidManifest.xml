@@ -17,22 +17,25 @@
         android:theme="@style/Theme.CinemaApp"
         tools:targetApi="31">
         <activity
-            android:name=".AddMovieActivity"
+            android:name=".admin.AddTicketActivity"
             android:exported="false" />
         <activity
-            android:name=".AddHallActivity"
+            android:name=".admin.AddMovieActivity"
             android:exported="false" />
         <activity
-            android:name=".AddBranchActivity"
+            android:name=".admin.AddHallActivity"
             android:exported="false" />
         <activity
-            android:name=".AddEmployeeActivity"
+            android:name=".admin.AddBranchActivity"
             android:exported="false" />
         <activity
-            android:name=".AdminPanelActivity"
+            android:name=".admin.AddEmployeeActivity"
             android:exported="false" />
         <activity
-            android:name=".AdminPinActivity"
+            android:name=".admin.AdminPanelActivity"
+            android:exported="false" />
+        <activity
+            android:name=".admin.AdminPinActivity"
             android:exported="false" />
         <activity
             android:name=".SplashScreenActivity"

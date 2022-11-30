@@ -10,9 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import com.moutamid.cinemaapp.AdminPinActivity;
+import com.moutamid.cinemaapp.admin.AdminPinActivity;
 import com.moutamid.cinemaapp.LoginActivity;
-import com.moutamid.cinemaapp.R;
 import com.moutamid.cinemaapp.databinding.FragmentAccountBinding;
 
 public class AccountFragment extends Fragment {

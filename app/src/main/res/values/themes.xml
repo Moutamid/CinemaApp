@@ -20,4 +20,9 @@
         <item name="checkedIconTint">@color/grey</item>
     </style>
 
+    <style name="Theme.CinemaApp.NumberPickerText">
+        <item name="android:textSize">28sp</item>
+        <item name="android:textColorPrimary">@color/accent</item>
+    </style>
+
 </resources>
