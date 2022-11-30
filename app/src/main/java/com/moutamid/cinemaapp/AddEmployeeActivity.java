@@ -28,7 +28,6 @@ public class AddEmployeeActivity extends AppCompatActivity {
     final Calendar calendar = Calendar.getInstance();
     Connection connection;
     ConSQL con;
-    String result = "User Created Successfully!";
     String FirstName, LastName, Address, sex;
     int ESSN, Salary;
     Date BirthDate;
@@ -142,7 +141,7 @@ public class AddEmployeeActivity extends AppCompatActivity {
                 PreparedStatement preparedStatement = connection.prepareStatement(queryStmt);
                 preparedStatement.executeQuery();
                 preparedStatement.close();
-                return result;
+                return "Employee Added Successfully";
             } catch (SQLException e) {
                 e.printStackTrace();
                 return e.getMessage();
@@ -153,7 +152,16 @@ public class AddEmployeeActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(String result) {
-            Snackbar.make(AddEmployeeActivity.this, binding.rlLayout, result, Snackbar.LENGTH_LONG).show();
+            Snackbar.make(AddEmployeeActivity.this, binding.rlLayout, "Employee Added Successfully", Snackbar.LENGTH_LONG).show();
+            binding.date.setText("Date");
+            binding.errorDate.setVisibility(View.GONE);
+            binding.essn.setText("");
+            binding.firstName.setText("");
+            binding.lastname.setText("");
+            binding.salary.setText("");
+            binding.address.setText("");
+            binding.male.setChecked(false);
+            binding.female.setChecked(false);
         }
     }
 
