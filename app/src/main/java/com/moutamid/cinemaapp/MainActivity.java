@@ -5,11 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.moutamid.cinemaapp.Utils.ConSQL;
 import com.moutamid.cinemaapp.databinding.ActivityMainBinding;
-import com.moutamid.cinemaapp.databinding.ActivitySignUpBinding;
 import com.moutamid.cinemaapp.fragments.AccountFragment;
 import com.moutamid.cinemaapp.fragments.HomeFragment;
 import com.moutamid.cinemaapp.fragments.MoviesFragment;

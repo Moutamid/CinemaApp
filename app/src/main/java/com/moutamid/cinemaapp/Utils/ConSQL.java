@@ -1,4 +1,4 @@
-package com.moutamid.cinemaapp;
+package com.moutamid.cinemaapp.Utils;
 
 import android.annotation.SuppressLint;
 import android.os.StrictMode;

@@ -1,7 +1,6 @@
 package com.moutamid.cinemaapp.fragments;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -13,9 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.moutamid.cinemaapp.ConSQL;
-import com.moutamid.cinemaapp.MainActivity;
-import com.moutamid.cinemaapp.R;
+import com.moutamid.cinemaapp.Utils.ConSQL;
 import com.moutamid.cinemaapp.adapters.MovieTimingAdapter;
 import com.moutamid.cinemaapp.databinding.FragmentHomeBinding;
 import com.moutamid.cinemaapp.model.MovieModel;
@@ -69,7 +66,7 @@ public class HomeFragment extends Fragment {
             getActionMovies();
             getSciMovies();
         } else {
-            Toast.makeText(context, "error", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "Couldn't connect to the server", Toast.LENGTH_SHORT).show();
         }
 
         return view;

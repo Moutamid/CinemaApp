@@ -6,10 +6,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.Patterns;
+import android.view.View;
 import android.widget.Toast;
 
+import com.google.android.material.snackbar.Snackbar;
+import com.moutamid.cinemaapp.Utils.ConSQL;
 import com.moutamid.cinemaapp.databinding.ActivityLoginBinding;
-import com.moutamid.cinemaapp.databinding.ActivitySignUpBinding;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -57,13 +59,35 @@ public class LoginActivity extends AppCompatActivity {
                                 startActivity(new Intent(this, MainActivity.class));
                             } else{
                                 Log.d("loginnn", "pass");
-                                Toast.makeText(this, "Password is Wrong", Toast.LENGTH_SHORT).show();
+                                Snackbar.make(LoginActivity.this, binding.rlLayout, "Password Is Wrong", Snackbar.LENGTH_LONG)
+                                        .setAction("Close", new View.OnClickListener() {
+                                            @Override
+                                            public void onClick(View v) {
+                                            }
+                                        })
+                                        .setActionTextColor(getResources().getColor(R.color.accent))
+                                        .show();
                             }
                         } else {
-                            Toast.makeText(this, "User Not Found", Toast.LENGTH_SHORT).show();
+                            Snackbar.make(LoginActivity.this, binding.rlLayout, "User not found", Snackbar.LENGTH_LONG)
+                                    .setAction("Create Account!", new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View v) {
+                                            startActivity(new Intent(LoginActivity.this, SignUpActivity.class));
+                                        }
+                                    })
+                                    .setActionTextColor(getResources().getColor(R.color.accent))
+                                    .show();
                         }
                     } else {
-                        Toast.makeText(this, "dddd", Toast.LENGTH_SHORT).show();
+                        Snackbar.make(LoginActivity.this, binding.rlLayout, "Couldn't connect to the server", Snackbar.LENGTH_INDEFINITE)
+                                .setAction("Close", new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+                                    }
+                                })
+                                .setActionTextColor(getResources().getColor(R.color.accent))
+                                .show();
                     }
                 } catch (SQLException e) {
                     Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();

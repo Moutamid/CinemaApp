@@ -18,6 +18,9 @@ public class AdminPinActivity extends AppCompatActivity {
 
         OtpTextView otpTextView;
         otpTextView = findViewById(R.id.otp_view);
+
+        otpTextView.requestFocus();
+
         otpTextView.setOtpListener(new OTPListener() {
             @Override
             public void onInteractionListener() {

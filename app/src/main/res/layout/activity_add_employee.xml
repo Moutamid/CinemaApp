@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/primary"
+    android:id="@+id/rl_layout"
     tools:context=".AddEmployeeActivity">
 
     <TextView
@@ -150,7 +151,7 @@
                 android:textColorHint="@color/dark" />
 
             <EditText
-                android:id="@+id/Address"
+                android:id="@+id/address"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:layout_marginStart="25sp"

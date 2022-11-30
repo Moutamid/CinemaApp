@@ -4,8 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
+import com.google.android.material.snackbar.Snackbar;
+import com.moutamid.cinemaapp.Utils.ConSQL;
 import com.moutamid.cinemaapp.databinding.ActivityAddEmployeeBinding;
 
 import java.sql.Connection;
@@ -33,6 +36,11 @@ public class AddEmployeeActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
+        binding.backbtn.setOnClickListener(v -> {
+            onBackPressed();
+            finish();
+        });
+
         DatePickerDialog.OnDateSetListener date = (datePicker, year, month, day) -> {
             calendar.set(Calendar.YEAR, year);
             calendar.set(Calendar.MONTH, month);
@@ -44,14 +52,58 @@ public class AddEmployeeActivity extends AppCompatActivity {
             new DatePickerDialog(AddEmployeeActivity.this, date, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH)).show();
         });
 
+//        insert into employee (FirstName, LastName, ESSN, BirthDate, Address, sex, Salary) VALUES('Ahmad','Alshahrani','1143700518','1994-1-10','Dammam','male','4000');
+
         binding.addEmployee.setOnClickListener(v -> {
                 if (connection!=null) {
-                    Toast.makeText(this, "connected", Toast.LENGTH_SHORT).show();
+                    if (validate()){
+                        Toast.makeText(this, "connected", Toast.LENGTH_SHORT).show();
+                    }
                 } else {
-                    Toast.makeText(this, "ddddd", Toast.LENGTH_SHORT).show();
+                    Snackbar.make(AddEmployeeActivity.this, binding.rlLayout, "Couldn't connect to the server", Snackbar.LENGTH_INDEFINITE)
+                            .setAction("Close", new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                }
+                            })
+                            .setActionTextColor(getResources().getColor(R.color.accent))
+                            .show();
                 }
         });
 
+    }
+
+    private boolean validate() {
+        if (binding.firstName.getText().toString().isEmpty()){
+            binding.firstName.setError("Required*");
+            binding.firstName.requestFocus();
+            return false;
+        }
+        if (binding.lastname.getText().toString().isEmpty()){
+            binding.lastname.setError("Required*");
+            binding.lastname.requestFocus();
+            return false;
+        }
+        if (binding.essn.getText().toString().isEmpty()){
+            binding.essn.setError("Required*");
+            binding.essn.requestFocus();
+            return false;
+        }
+        if (binding.salary.getText().toString().isEmpty()){
+            binding.salary.setError("Required*");
+            binding.salary.requestFocus();
+            return false;
+        }
+        if (binding.address.getText().toString().isEmpty()){
+            binding.address.setError("Required*");
+            binding.address.requestFocus();
+            return false;
+        }
+        if (!binding.male.isChecked() && !binding.female.isChecked()){
+            Toast.makeText(this, "Please Add A Gender", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        return true;
     }
 
     private void updateLabel() {
