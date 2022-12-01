@@ -1,6 +1,7 @@
 package com.moutamid.cinemaapp.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.card.MaterialCardView;
+import com.moutamid.cinemaapp.BookTicketActivity;
 import com.moutamid.cinemaapp.R;
 import com.moutamid.cinemaapp.model.MovieModel;
 
@@ -34,6 +36,11 @@ public class MovieTimingAdapter extends RecyclerView.Adapter<MovieTimingAdapter.
     @Override
     public void onBindViewHolder(@NonNull MovieTimeVH holder, int position) {
         holder.time.setText(list.get(holder.getAdapterPosition()).getShow_times().toString().substring(0,5));
+        holder.card.setOnClickListener(v -> {
+            Intent i = new Intent(context, BookTicketActivity.class);
+            i.putExtra("movie", list.get(holder.getAdapterPosition()));
+            context.startActivity(i);
+        });
     }
 
     @Override

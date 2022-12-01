@@ -15,7 +15,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CinemaApp"
+        android:name=".Utils.MyApplication"
         tools:targetApi="31">
+        <activity
+            android:name=".BookTicketActivity"
+            android:exported="false" />
         <activity
             android:name=".admin.AddTicketActivity"
             android:exported="false" />

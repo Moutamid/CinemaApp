@@ -1,9 +1,10 @@
 package com.moutamid.cinemaapp.model;
 
+import java.io.Serializable;
 import java.sql.Date;
 import java.sql.Time;
 
-public class MovieModel {
+public class MovieModel implements Serializable {
     String MOVIEname, category, Suitable_age, Director, writer;
     int production_year;
     Date show_date;

@@ -4,8 +4,7 @@ public class UserModel {
     String UserName, Email, PhoneNumber, userPassword;
     int TicketNumber, seatNumber;
 
-    public UserModel() {
-    }
+    public UserModel() { }
 
     public UserModel(String userName, String email, String phoneNumber, String userPassword, int ticketNumber, int seatNumber) {
         UserName = userName;
