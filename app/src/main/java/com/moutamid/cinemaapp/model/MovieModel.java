@@ -13,6 +13,11 @@ public class MovieModel implements Serializable {
     public MovieModel() {
     }
 
+    public MovieModel(String MOVIEname, int production_year) {
+        this.MOVIEname = MOVIEname;
+        this.production_year = production_year;
+    }
+
     public MovieModel(String MOVIEname, String category, String suitable_age, String director, String writer, int production_year, Date show_date, Time show_times) {
         this.MOVIEname = MOVIEname;
         this.category = category;

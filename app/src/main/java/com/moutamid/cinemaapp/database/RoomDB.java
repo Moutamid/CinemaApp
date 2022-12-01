@@ -11,7 +11,7 @@ import com.moutamid.cinemaapp.model.CartModel;
 @Database(entities = CartModel.class, version = 1, exportSchema = false)
 public abstract class RoomDB extends RoomDatabase {
     private static RoomDB database;
-    private static String DATABASE_NAME = "NotesApp";
+    private static String DATABASE_NAME = "CinemaApp";
 
     public synchronized static RoomDB getInstance(Context context){
         if (database == null){

@@ -17,12 +17,9 @@ public interface MainDAO {
     @Insert(onConflict = REPLACE)
     void insert(CartModel cartModel);
 
-    /*@Query("SELECT * FROM notes ORDER BY id DESC")
+    @Query("SELECT * FROM Cart ORDER BY ID DESC")
     List<CartModel> getAll();
 
-    @Query("UPDATE notes SET title = :title, notes = :notes, date= :date where ID = :id")
-    void update(int id, String title, String notes, String date);
-*/
     @Delete
     void Delete(CartModel cartModel);
 }

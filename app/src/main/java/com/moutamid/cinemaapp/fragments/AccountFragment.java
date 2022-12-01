@@ -10,13 +10,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.fxn.stash.Stash;
 import com.moutamid.cinemaapp.admin.AdminPinActivity;
 import com.moutamid.cinemaapp.LoginActivity;
 import com.moutamid.cinemaapp.databinding.FragmentAccountBinding;
 
 public class AccountFragment extends Fragment {
-    Button admin;
+    boolean isLogin;
     FragmentAccountBinding binding;
+
+
     public AccountFragment() {
         // Required empty public constructor
     }
@@ -27,6 +30,16 @@ public class AccountFragment extends Fragment {
         // Inflate the layout for this fragment
         binding = FragmentAccountBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
+
+        isLogin = Stash.getBoolean("isLogin", false);
+
+        if (isLogin){
+            binding.loginBtn.setVisibility(View.GONE);
+            binding.layout.setVisibility(View.GONE);
+            binding.admin.setVisibility(View.GONE);
+
+            binding.title.setText("Welcome fella!");
+        }
 
         binding.admin.setOnClickListener(v -> {
             startActivity(new Intent(view.getContext(), AdminPinActivity.class));

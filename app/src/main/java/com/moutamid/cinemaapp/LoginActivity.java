@@ -9,6 +9,7 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Toast;
 
+import com.fxn.stash.Stash;
 import com.google.android.material.snackbar.Snackbar;
 import com.moutamid.cinemaapp.Utils.ConSQL;
 import com.moutamid.cinemaapp.databinding.ActivityLoginBinding;
@@ -56,6 +57,8 @@ public class LoginActivity extends AppCompatActivity {
                             Log.d("loginnn", "iiiiff");
                             if (binding.password.getText().toString().equals(set.getString(4))){
                                 Log.d("loginnn", "error");
+                                Stash.put("isLogin", true);
+                                Stash.put("email", binding.email.getText().toString());
                                 startActivity(new Intent(this, MainActivity.class));
                             } else{
                                 Log.d("loginnn", "pass");
