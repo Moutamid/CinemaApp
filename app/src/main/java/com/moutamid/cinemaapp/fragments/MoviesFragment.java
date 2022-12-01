@@ -89,6 +89,8 @@ public class MoviesFragment extends Fragment {
                                 String poster = response.getString("Poster");
                                 Log.d("Movies", "Poster" + " - " + poster);
                                 movieList.add(poster);
+                                adapter = new MovieAdapter(context, movieList);
+                                binding.moviesRC.setAdapter(adapter);
                             } catch (JSONException e) {
                                 e.printStackTrace();
                             }
@@ -98,8 +100,6 @@ public class MoviesFragment extends Fragment {
                         Toast.makeText(context, error.getMessage(), Toast.LENGTH_LONG).show();
                     }
             );
-            adapter = new MovieAdapter(context, movieList);
-            binding.moviesRC.setAdapter(adapter);
             requestQueue.add(jsonObjectRequest);
         }
     }

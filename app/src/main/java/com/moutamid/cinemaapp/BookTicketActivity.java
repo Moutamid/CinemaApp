@@ -150,12 +150,12 @@ public class BookTicketActivity extends AppCompatActivity {
                     if(response != null){
                         try {
                             String poster = response.getString("Poster");
-                            Glide.with(BookTicketActivity.this).load(poster).into(binding.poster);
+                            Glide.with(BookTicketActivity.this).load(poster).into(binding.posterImage);
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
                     } else {
-                        binding.poster.setImageResource(R.drawable.poster);
+                        binding.posterImage.setImageResource(R.drawable.poster);
                     }
                 },
                 error -> {

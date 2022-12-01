@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.moutamid.cinemaapp.MainActivity;
 import com.moutamid.cinemaapp.databinding.ActivityAdminPanelBinding;
 
 public class AdminPanelActivity extends AppCompatActivity {
@@ -16,7 +17,7 @@ public class AdminPanelActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         binding.backbtn.setOnClickListener(v -> {
-            onBackPressed();
+            startActivity(new Intent(this, MainActivity.class));
             finish();
         });
 

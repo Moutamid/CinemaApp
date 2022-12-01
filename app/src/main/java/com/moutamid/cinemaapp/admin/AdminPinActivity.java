@@ -23,6 +23,11 @@ public class AdminPinActivity extends AppCompatActivity {
 
         otpTextView.requestFocus();
 
+        findViewById(R.id.backbtn).setOnClickListener(v -> {
+            onBackPressed();
+            finish();
+        });
+
         otpTextView.setOtpListener(new OTPListener() {
             @Override
             public void onInteractionListener() {

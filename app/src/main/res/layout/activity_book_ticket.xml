@@ -85,7 +85,7 @@
                         app:cardCornerRadius="8dp">
 
                         <ImageView
-                            android:id="@+id/poster"
+                            android:id="@+id/posterImage"
                             android:src="@drawable/poster"
                             android:scaleType="fitXY"
                             android:layout_width="match_parent"

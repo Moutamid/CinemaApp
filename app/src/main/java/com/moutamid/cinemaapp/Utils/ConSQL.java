@@ -12,7 +12,7 @@ public class ConSQL {
     public Connection conclass() {
         Connection con = null;
 
-        String ip = "192.168.10.8", port = "1433", db = "movies", username = "sa", password = "suleman";
+        String ip = "192.168.10.7", port = "1433", db = "movies", username = "sa", password = "suleman";
         StrictMode.ThreadPolicy a = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(a);
         String connectURL = null;
