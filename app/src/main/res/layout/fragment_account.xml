@@ -7,6 +7,30 @@
     android:background="@color/primary"
     tools:context=".fragments.AccountFragment">
 
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cartBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25sp"
+        android:layout_marginTop="25sp"
+        android:layout_marginEnd="25sp"
+        app:cardBackgroundColor="@color/accent"
+        android:visibility="gone"
+        android:layout_below="@id/title"
+        app:cardCornerRadius="4dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Cart"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:padding="12dp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/poppins" />
+
+    </com.google.android.material.card.MaterialCardView>
+
     <TextView
         android:id="@+id/title"
         android:layout_width="match_parent"

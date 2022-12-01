@@ -30,6 +30,8 @@ public class CartActivity extends AppCompatActivity {
             finish();
         });
 
+        database = RoomDB.getInstance(this);
+
         list = new ArrayList<>();
 
         binding.cartRC.setHasFixedSize(false);

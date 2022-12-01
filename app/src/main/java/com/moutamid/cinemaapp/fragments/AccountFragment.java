@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.fxn.stash.Stash;
+import com.moutamid.cinemaapp.CartActivity;
 import com.moutamid.cinemaapp.admin.AdminPinActivity;
 import com.moutamid.cinemaapp.LoginActivity;
 import com.moutamid.cinemaapp.databinding.FragmentAccountBinding;
@@ -37,7 +38,7 @@ public class AccountFragment extends Fragment {
             binding.loginBtn.setVisibility(View.GONE);
             binding.layout.setVisibility(View.GONE);
             binding.admin.setVisibility(View.GONE);
-
+            binding.cartBtn.setVisibility(View.VISIBLE);
             binding.title.setText("Welcome fella!");
         }
 
@@ -47,6 +48,10 @@ public class AccountFragment extends Fragment {
 
         binding.loginBtn.setOnClickListener(v -> {
             startActivity(new Intent(view.getContext(), LoginActivity.class));
+        });
+
+        binding.cartBtn.setOnClickListener(v -> {
+            startActivity(new Intent(view.getContext(), CartActivity.class));
         });
 
         return view;
